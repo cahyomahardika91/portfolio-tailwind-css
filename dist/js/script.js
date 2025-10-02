@@ -30,3 +30,29 @@ window.addEventListener('click', function(e){
         navMenu.classList.add('hidden');
     }
 });
+
+// Dark Mode
+const checkbox = document.querySelector('#toggle');
+const html = document.querySelector('html');
+
+checkbox.addEventListener('click', function(){
+    if(checkbox.checked)
+    {
+        html.classList.add('dark');
+        localStorage.theme = 'dark';
+    }else
+    {
+        html.classList.remove('dark');
+        localStorage.theme = 'light';
+    }
+});
+
+// pindahkan posisi toggle sesuai mode
+if(localStorage.theme === 'dark' || (!('theme' in localStorage)&&window.matchMedia('(prefers-color-scheme: dark)').matches)){
+    document.documentElement.classList.add('dark');
+    checkbox.checked = true;
+}
+else{
+    document.documentElement.classList.remove('dark');
+    checkbox.checked = false;
+}
