@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev" : "npx tailwindcss -i ./src/input.css -o ./dist/style.css --watch"
+    "dev": "npx tailwindcss -i ./src/input.css -o ./dist/style.css --watch"
   },
   "keywords": [],
   "author": "",
@@ -12,5 +12,9 @@
   "description": "",
   "dependencies": {
     "tailwindcss": "^3.4.17"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2",
+    "prettier-plugin-tailwindcss": "^0.6.14"
   }
 }
